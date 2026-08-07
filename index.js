@@ -7,7 +7,14 @@ import QueryRouter from "./src/Router/QueryRouter.js";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    process.env.FRONTEND_URL,
+  ],
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
 app.use(express.json());
 
 app.use("/api", QueryRouter);
