@@ -10,9 +10,10 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
+    "https://kannanmportfolio.netlify.app",
     process.env.FRONTEND_URL,
   ],
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "OPTIONS"],
   credentials: true,
 }));
 app.use(express.json());
