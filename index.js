@@ -7,15 +7,13 @@ import QueryRouter from "./src/Router/QueryRouter.js";
 
 dotenv.config();
 const app = express();
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://kannanmportfolio.netlify.app",
-    process.env.FRONTEND_URL,
-  ],
-  methods: ["GET", "POST", "OPTIONS"],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: "https://portfolio-kuq5.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 app.use(express.json());
 
 app.use("/api", QueryRouter);
