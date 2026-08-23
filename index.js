@@ -13,10 +13,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
-<<<<<<< HEAD
 
-=======
->>>>>>> 8376d50944a0a091838c362878ff1ebc23468148
 app.use(express.json());
 
 app.use("/api", QueryRouter);
